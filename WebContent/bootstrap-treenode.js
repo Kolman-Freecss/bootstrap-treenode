@@ -533,11 +533,6 @@
 				.addClass(node.searchResult ? 'search-result' : '') 
 				.attr('data-nodeid', node.nodeId)
 				.attr('style', _this.buildStyleOverride(node));
-
-			// Add indent/spacer to mimic tree structure
-			for (var i = 0; i < (level - 1); i++) {
-				treeItemLi.append(_this.template.indent);
-			}
 			
 			var iconLabelDiv = $(_this.template.div);
 			
@@ -571,7 +566,7 @@
 
 			iconLabelDiv
 				.addClass('col-sm-' + _this.options.containerLabelSize)
-				.attr('style', paddingLenght != 0 ? 'margin-top:8px;padding-left:'+paddingLenght+'%;' : 'margin-top:8px;')
+				.attr('style', paddingLenght != 0 ? 'padding-left:'+paddingLenght+'%;' : '')
 			
 			iconLabelDiv
 				.append($(_this.template.icon)
@@ -731,7 +726,6 @@
 	Tree.prototype.template = {
 		list: '<ul class="list-group"></ul>',
 		item: '<li class="list-group-item"></li>',
-		indent: '<span class="indent"></span>',
 		icon: '<span class="icon"></span>',
 		link: '<a href="#" style="color:inherit;"></a>',
 		badge: '<span class="badge"></span>',
@@ -741,7 +735,7 @@
 		div: '<div></div>'
 	};
 
-	Tree.prototype.css = '.treenode .list-group-item{cursor:pointer}.treenode span.indent{margin-left:10px;margin-right:10px}.treenode span.icon{width:12px;margin-right:5px}.treenode .node-disabled, .treenode .node-disabled label, .treenode .node-disabled input{color:silver;cursor:not-allowed}' +
+	Tree.prototype.css = '.treenode .list-group-item{cursor:pointer}.treenode span.icon{width:12px;margin-right:5px;padding-top:8px;}.treenode .node-disabled, .treenode .node-disabled label, .treenode .node-disabled input{color:silver;cursor:not-allowed}' +
 							'.treenode .row .form-control {width: auto;}.treenode .row .control-label{text-align: inherit}'
 
 	/**

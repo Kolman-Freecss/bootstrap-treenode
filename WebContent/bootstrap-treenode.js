@@ -626,7 +626,7 @@
 				treeItem
 					.append(input
 						.addClass(_this.options.inputTextSize ? 'col-sm-' + _this.options.inputTextSize : '')
-						.attr('disabled', node.state.disabled ? "true" : "")
+						.attr('disabled', treeItemLi.hasClass("node-disabled") ? true : false)
 						.attr('name', node.name)
 						.attr('value', node.input ? node.input.value ? node.input.value : '' : '')
 						.val(node.inputValue ? node.inputValue : '')
@@ -741,8 +741,8 @@
 		div: '<div></div>'
 	};
 
-	Tree.prototype.css = '.treeview .list-group-item{cursor:pointer}.treeview span.indent{margin-left:10px;margin-right:10px}.treeview span.icon{width:12px;margin-right:5px}.treeview .node-disabled, .treeview .node-disabled label, .treeview .node-disabled input{color:silver;cursor:not-allowed}' +
-							'.treeview .row .form-control {width: auto;}.treeview .row .control-label{text-align: inherit}'
+	Tree.prototype.css = '.treenode .list-group-item{cursor:pointer}.treenode span.indent{margin-left:10px;margin-right:10px}.treenode span.icon{width:12px;margin-right:5px}.treenode .node-disabled, .treenode .node-disabled label, .treenode .node-disabled input{color:silver;cursor:not-allowed}' +
+							'.treenode .row .form-control {width: auto;}.treenode .row .control-label{text-align: inherit}'
 
 	/**
 		Returns a single node object that matches the given node id.
